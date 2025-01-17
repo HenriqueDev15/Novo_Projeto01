@@ -7,8 +7,13 @@ public class PLAYER : MonoBehaviour
     // Start is called before the first frame update
 
     public int numero = 10;
+
+    private Rigidbody2D _rigidbody2D;
     void Start()
     {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+            
+            
         Debug.Log("Teste..."+ numero);
     }
 
