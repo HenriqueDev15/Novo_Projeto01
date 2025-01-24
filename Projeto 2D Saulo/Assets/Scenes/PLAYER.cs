@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
     public float velocidade = 10f;
     public float focaPulo = 10f;
+
 
     public bool noChao = false;
   
 
     private Rigidbody2D _rigidbody2D;
     private SpriteRenderer  spriteRenderer; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,7 @@ public class Player : MonoBehaviour
 
 
     void OnCollisionStay2D(Collision2D collision)
+
     {
         if (collision.gameObject.tag == "chao")
         {
@@ -40,6 +44,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(Input.GetKey(KeyCode.LeftArrow))
         {
             gameObject.transform.position += new Vector3(-velocidade*Time.deltaTime,0,0);
@@ -56,6 +61,7 @@ public class Player : MonoBehaviour
             spriteRenderer.flipX = false;
             Debug.Log("RightArrow");
         }
+
 
         if (Input.GetKeyDown(KeyCode.Space) && noChao == true)
         {
